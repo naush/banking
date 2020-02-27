@@ -49,3 +49,4 @@ Create a banking application with the following features:
 
 * [Bank on Katalyst](https://katalyst.codurance.com/bank)
 * [Object Calisthenics](https://www.cs.helsinki.fi/u/luontola/tdd-2009/ext/ObjectCalisthenics.pdf)
+* [unittest.mock documentation](https://docs.python.org/3/library/unittest.mock-examples.html)

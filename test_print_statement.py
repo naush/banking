@@ -1,13 +1,15 @@
 import io
-from unittest import TestCase
+from unittest import TestCase, skip
 
 from banking import Account
 
 
 class TestPrintStatement(TestCase):
+
+    @skip
     def test_print_statement(self):
         output = io.StringIO()
-        account = Account(output)
+        account = Account(output=output)
 
         account.deposit(1000)
         account.deposit(2000)
