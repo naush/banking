@@ -13,10 +13,9 @@ class TestAccount(TestCase):
     def test_deposit_adds_one_deposit_transaction(self, mock_transaction_constructor, mock_date):
         mock_transaction = mock_transaction_constructor.return_value
         mock_date.today.return_value = date(2012, 1, 10)
-
         mock_transaction_history = Mock()
-        account = Account(transaction_history=mock_transaction_history)
 
+        account = Account(transaction_history=mock_transaction_history)
         account.deposit(1000)
 
         mock_transaction_constructor.assert_called_with(1000, date(2012, 1, 10))
@@ -87,4 +86,4 @@ class TestAccount(TestCase):
         account.print_statement()
 
         mock_bank_statement_constructor.assert_called_with(mock_transaction_history)
-        mock_output.write.assert_called_with(mock_bank_statement)
+        mock_output.write.assert_called_with(str(mock_bank_statement))

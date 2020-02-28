@@ -1,13 +1,22 @@
 import io
+from datetime import date
+
 from unittest import TestCase, skip
+from unittest.mock import patch
 
 from banking import Account
 
 
 class TestPrintStatement(TestCase):
 
-    @skip
-    def test_print_statement(self):
+    @patch('banking.date')
+    def test_print_statement(self, mock_date):
+        mock_date.today.side_effect = [
+            date(2012, 1, 10),
+            date(2012, 1, 13),
+            date(2012, 1, 14)
+        ]
+
         output = io.StringIO()
         account = Account(output=output)
 
