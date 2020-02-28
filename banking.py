@@ -16,10 +16,10 @@ class BankStatement:
 
             if isinstance(transaction, DepositTransaction):
                 balance += transaction.amount
-                body = "{}||{}|{}\n".format(transaction_date, transaction.amount, balance) + body
+                body = "{}|{}||{}\n".format(transaction_date, transaction.amount, balance) + body
             else:
                 balance -= transaction.amount
-                body = "{}|{}||{}\n".format(transaction_date, transaction.amount, balance) + body
+                body = "{}||{}|{}\n".format(transaction_date, transaction.amount, balance) + body
 
         return header + body
 

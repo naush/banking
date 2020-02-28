@@ -25,7 +25,7 @@ Date|Credit|Debit|Balance
         self.assertEqual(statement.__str__(),
 '''\
 Date|Credit|Debit|Balance
-01/01/2020||1000|1000
+01/01/2020|1000||1000
 '''
         )
 
@@ -39,7 +39,7 @@ Date|Credit|Debit|Balance
         self.assertEqual(statement.__str__(),
 '''\
 Date|Credit|Debit|Balance
-02/01/2020|500||500
-01/01/2020||1000|1000
+02/01/2020||500|500
+01/01/2020|1000||1000
 '''
         )
